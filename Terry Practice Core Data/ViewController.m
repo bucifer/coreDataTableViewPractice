@@ -118,7 +118,6 @@
     celeb.celeb_id = celeb_id;
     celeb.name = name;
     celeb.age = age;
-    //    [celeb setEmp_location:age];
     [self saveChanges];
     [self.celebs addObject:celeb];
     [self.myTableView reloadData];
