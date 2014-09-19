@@ -98,6 +98,19 @@
                  name:self.nameField.text age:@([self.ageField.text intValue]) ];
 }
 
+- (IBAction)editButton:(UIButton *)sender {
+    UIButton *btn = (UIButton *)sender;
+    
+    if([self.myTableView isEditing]){
+        [btn setTitle:@"Edit" forState:UIControlStateNormal];
+    }
+    else{
+        [btn setTitle:@"Done" forState:UIControlStateNormal];
+    }
+    [self.myTableView setEditing:![self.myTableView isEditing]];
+}
+
+
 -(void)createCeleb:(NSNumber*)celeb_id name:(NSString*)name age:(NSNumber*)age;
 {
     Celeb *celeb = [NSEntityDescription insertNewObjectForEntityForName:@"Celeb" inManagedObjectContext:context];
